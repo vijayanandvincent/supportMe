@@ -1,4 +1,4 @@
-title: "CPU High Usage Simulation"
+title: "CPU High Usage  Simulation"
 description: "Simulate high CPU usage and teach troubleshooting techniques."
 environment: "ubuntu:22.04"
 steps:
