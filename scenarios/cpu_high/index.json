@@ -4,11 +4,11 @@
     "steps": [
       {
         "title": "Check Current CPU Usage",
-        "text": "steps/step1.md"
+        "text": "steps/step1.sh"
       },
       {
         "title": "Simulate High CPU Load",
-        "text": "steps/step2.md"
+        "text": "steps/step2.sh"
       }
     ]
   },
