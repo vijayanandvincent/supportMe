@@ -7,10 +7,10 @@ backend:
 steps:
   - title: "Check Current CPU Usage"
     description: "Observe current CPU usage using top or htop."
-    file: "steps/step1.md"
+    file: "steps/step1.sh"
     points: 10
 
   - title: "Simulate High CPU Load"
     description: "Run commands to generate high CPU load."
-    file: "steps/step2.md"
+    file: "steps/step2.sh"
     points: 20
