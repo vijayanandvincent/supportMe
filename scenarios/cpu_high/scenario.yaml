@@ -1,12 +1,16 @@
-title: "CPU High Usage  Simulation"
+slug: cpu-high
+title: "CPU High Usage Simulation"
 description: "Simulate high CPU usage and teach troubleshooting techniques."
-environment: "ubuntu:22.04"
+backend:
+  imageid: ubuntu:22.04
+
 steps:
   - title: "Check Current CPU Usage"
     description: "Observe current CPU usage using top or htop."
-    file: "steps/step1.sh"
+    file: "steps/step1.md"
     points: 10
+
   - title: "Simulate High CPU Load"
     description: "Run commands to generate high CPU load."
-    file: "steps/step2.sh"
+    file: "steps/step2.md"
     points: 20
