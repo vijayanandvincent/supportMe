@@ -1,0 +1,18 @@
+{
+  "title": "CPU High Usage Simulation",
+  "details": {
+    "steps": [
+      {
+        "title": "Check Current CPU Usage",
+        "text": "steps/step1.md"
+      },
+      {
+        "title": "Simulate High CPU Load",
+        "text": "steps/step2.md"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
