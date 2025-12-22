@@ -26,7 +26,7 @@
     }
   },
   "backend": {
-  "imageid": "ubuntu:22.04",
+  "imageid": "ubuntu:20.04",
   "environment": {
     "SHOW_FILE_TREE": "true"
   }
