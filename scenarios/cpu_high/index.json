@@ -11,25 +11,25 @@
   },
   "details": {
     "intro": {
-      "text": "intro.md",
+      "text": "steps/intro.md",
       "courseData": "assets/setup.sh"
     },
     "steps": [
       {
         "title": "Detect High CPU Usage",
-        "text": "step1.sh"
+        "text": "steps/step1.sh"
       },
       {
         "title": "Identify Problem Process",
-        "text": "step2.sh"
+        "text": "steps/step2.sh"
       },
       {
         "title": "Fix and Verify",
-        "text": "step3.sh"
+        "text": "steps/step3.sh"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "steps/finish.md"
     }
   }
 }
