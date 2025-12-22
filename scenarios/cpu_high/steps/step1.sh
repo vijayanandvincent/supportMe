@@ -1,8 +1,8 @@
-#!/bin/bash
+## Step 1 – Detect CPU Issue
 
-echo "Step 1: Checking current CPU usage..."
+Run the following commands:
 
-top -b -n1 | head -10
-
-echo "Record the CPU usage for analysis."
-
+```bash
+top
+uptime
+mpstat
