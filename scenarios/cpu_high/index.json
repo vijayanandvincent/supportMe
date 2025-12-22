@@ -26,6 +26,15 @@
     }
   },
   "backend": {
-    "imageid": "ubuntu:20.04"
+  "imageid": "ubuntu:20.04",
+  "environment": {
+    "SHOW_FILE_TREE": "true"
   }
+},
+"details": {
+  "intro": {
+    "text": "intro.md",
+    "courseData": "assets/setup.sh"
+  }
+}
 }
