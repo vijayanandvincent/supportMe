@@ -1,16 +1,28 @@
-slug: cpu-high
-title: "CPU High Usage Simulation"
-description: "Simulate high CPU usage and teach troubleshooting techniques."
+title: "Linux CPU High Usage Incident"
+description: "Troubleshoot high CPU usage as a Support Engineer"
+difficulty: beginner
+time: 30 minutes
+
 backend:
   imageid: ubuntu:20.04
 
-steps:
-  - title: "Check Current CPU Usage"
-    description: "Observe current CPU usage using top or htop."
-    file: "steps/step1.sh"
-    points: 10
+environment:
+  SHOW_FILE_TREE: true
 
-  - title: "Simulate High CPU Load"
-    description: "Run commands to generate high CPU load."
-    file: "steps/step2.sh"
-    points: 20
+details:
+  intro:
+    text: intro.md
+    courseData: assets/setup.sh
+
+  steps:
+    - title: "Detect High CPU Usage"
+      text: step1.md
+
+    - title: "Identify Problem Process"
+      text: step2.md
+
+    - title: "Fix and Verify"
+      text: step3.md
+
+  finish:
+    text: finish.md
