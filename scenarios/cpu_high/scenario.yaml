@@ -2,7 +2,7 @@ slug: cpu-high
 title: "CPU High Usage Simulation"
 description: "Simulate high CPU usage and teach troubleshooting techniques."
 backend:
-  imageid: ubuntu:22.04
+  imageid: ubuntu:20.04
 
 steps:
   - title: "Check Current CPU Usage"
