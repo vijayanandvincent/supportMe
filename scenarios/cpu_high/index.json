@@ -1,18 +1,31 @@
 {
-  "title": "CPU High Usage Simulation",
+  "title": "Linux CPU High Usage Incident",
+  "description": "Troubleshoot high CPU usage as a Support Engineer",
+  "difficulty": "Beginner",
+  "time": "30 minutes",
   "details": {
+    "intro": {
+      "text": "intro.md"
+    },
     "steps": [
       {
-        "title": "Check Current CPU Usage",
-        "text": "steps/step1.sh"
+        "title": "Detect High CPU Usage",
+        "text": "step1.md"
       },
       {
-        "title": "Simulate High CPU Load",
-        "text": "steps/step2.sh"
+        "title": "Identify Problem Process",
+        "text": "step2.md"
+      },
+      {
+        "title": "Fix and Verify",
+        "text": "step3.md"
       }
-    ]
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "ubuntu:20.04"
   }
 }
