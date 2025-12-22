@@ -21,11 +21,11 @@
       },
       {
         "title": "Identify Problem Process",
-        "text": "step2.md"
+        "text": "step2.sh"
       },
       {
         "title": "Fix and Verify",
-        "text": "step3.md"
+        "text": "step3.sh"
       }
     ],
     "finish": {
