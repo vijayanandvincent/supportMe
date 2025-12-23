@@ -1,13 +1,4 @@
-## Step 1 – Detect CPU Issue
-
----
-
-### `step3.md`
-```md
-## Step 3 – Fix the Issue
-
-Stop Or kill the process by using kill command
-
+### Step 1 – Detect CPU Issue
 
 #Run the following commands:
 
