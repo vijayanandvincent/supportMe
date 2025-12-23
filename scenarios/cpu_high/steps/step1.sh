@@ -1,6 +1,15 @@
 ## Step 1 – Detect CPU Issue
 
-Run the following commands:
+---
+
+### `step3.md`
+```md
+## Step 3 – Fix the Issue
+
+Stop Or kill the process by using kill command
+
+
+#Run the following commands:
 
 ```bash
 top   - Real-time monitoring of system performance and identifying resource-consuming processes.
