@@ -18,4 +18,5 @@ top   - Real-time monitoring of system performance and identifying resource-cons
 -3.Then press Ctrl+c to exit
 uptime - System load & how long it’s been running
 mpstat - Per-CPU utilization statistics
+
 CLICK NEXT
