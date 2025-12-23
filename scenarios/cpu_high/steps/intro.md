@@ -6,3 +6,4 @@ Your task is to:
 - Investigate the issue
 - Identify the root cause
 - Restore normal CPU levels
+- CLICK START NOW
