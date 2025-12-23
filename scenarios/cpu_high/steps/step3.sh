@@ -9,6 +9,7 @@ Stop Or kill the process by using kill command
 
 ```bash
 kill -9 <PID>
+
 AGAIN RUN TOP TO CHECK PIDS BEEN KILLED AND %CPU HAS REDUCED BY USING BELOW COMMAND
 ps -eo pid,cmd,%cpu --sort=-%cpu | head
 
