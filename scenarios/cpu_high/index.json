@@ -29,6 +29,6 @@
     "imageid": "ubuntu"
   },
   "environment": {
-    "setup": "assets/setup.sh"
+    "setup": "assets/setup1.sh"
   }
 }
