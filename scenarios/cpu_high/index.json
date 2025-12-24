@@ -29,6 +29,6 @@
     "imageid": "ubuntu"
   },
   "environment": {
-    "setup": "assets/setup1.sh"
+    "courseData": "assets/setup1.sh"
   }
 }
