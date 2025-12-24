@@ -10,15 +10,15 @@
     "steps": [
       {
         "title": "Review the Incident Ticket",
-        "text": "steps/step1.md"
+        "text": "steps/step1.sh"
       },
       {
         "title": "Investigate CPU Usage",
-        "text": "steps/step2.md"
+        "text": "steps/step2.sh"
       },
       {
         "title": "Resolve the Incident",
-        "text": "steps/step3.md"
+        "text": "steps/step3.sh"
       }
     ],
     "finish": {
