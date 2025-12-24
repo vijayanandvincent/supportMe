@@ -1,46 +1,61 @@
 #!/bin/bash
 
 
-
 echo "🚀 Starting Grafana CPU Incident Lab Setup..."
 
-# Update OS
-apt update -y
-
+# -------------------------------
 # Install dependencies
-apt install -y wget curl stress software-properties-common
+# -------------------------------
+apt update
+apt install -y wget curl stress
+
+cd /opt
 
 # -------------------------------
 # Install Node Exporter
 # -------------------------------
-cd /opt
+echo "📦 Installing Node Exporter..."
 wget -q https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
 tar xzf node_exporter-1.7.0.linux-amd64.tar.gz
-nohup ./node_exporter-1.7.0.linux-amd64/node_exporter > /dev/null 2>&1 &
+
+nohup /opt/node_exporter-1.7.0.linux-amd64/node_exporter \
+  > /var/log/node_exporter.log 2>&1 &
 
 # -------------------------------
 # Install Prometheus
 # -------------------------------
+echo "📦 Installing Prometheus..."
 wget -q https://github.com/prometheus/prometheus/releases/download/v2.52.0/prometheus-2.52.0.linux-amd64.tar.gz
 tar xzf prometheus-2.52.0.linux-amd64.tar.gz
 
-cp /root/assets/prometheus.yml prometheus-2.52.0.linux-amd64/
-cp /root/assets/alert.rules.yml prometheus-2.52.0.linux-amd64/
+cp /root/assets/prometheus.yml /opt/prometheus-2.52.0.linux-amd64/
+cp /root/assets/alert.rules.yml /opt/prometheus-2.52.0.linux-amd64/
 
-nohup ./prometheus-2.52.0.linux-amd64/prometheus \
-  --config.file=prometheus-2.52.0.linux-amd64/prometheus.yml > /dev/null 2>&1 &
+nohup /opt/prometheus-2.52.0.linux-amd64/prometheus \
+  --config.file=/opt/prometheus-2.52.0.linux-amd64/prometheus.yml \
+  > /var/log/prometheus.log 2>&1 &
 
 # -------------------------------
-# Install Grafana
+# Install Grafana (BINARY)
 # -------------------------------
-apt install -y grafana
-systemctl start grafana-server
+echo "📦 Installing Grafana..."
+wget -q https://dl.grafana.com/oss/release/grafana-10.2.3.linux-amd64.tar.gz
+tar xzf grafana-10.2.3.linux-amd64.tar.gz
+
+nohup /opt/grafana-10.2.3/bin/grafana-server \
+  --homepath=/opt/grafana-10.2.3 \
+  > /var/log/grafana.log 2>&1 &
 
 # -------------------------------
 # Simulate CPU Issue
 # -------------------------------
+echo "🔥 Simulating CPU stress..."
 stress --cpu 2 &
 
-echo "✅ Grafana Lab Ready"
-echo "🌐 Grafana URL: http://localhost:3000"
-echo "👤 Login: admin / admin"
+# -------------------------------
+# Done
+# -------------------------------
+echo "✅ Grafana CPU Incident Lab Ready"
+echo "🌐 Grafana: http://localhost:3000"
+echo "📊 Prometheus: http://localhost:9090"
+echo "👤 Grafana Login: admin / admin"
