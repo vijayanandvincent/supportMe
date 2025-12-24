@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+
 echo "🚀 Starting Grafana CPU Incident Lab Setup..."
 
 # Update OS
