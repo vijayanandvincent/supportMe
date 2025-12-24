@@ -4,7 +4,7 @@
   "difficulty": "Beginner",
   "time": "30 minutes",
   "backend": {
-    "imageid": "ubuntu:22.04"
+    "imageid": "ubuntu"
   },
   "environment": {
     "SHOW_FILE_TREE": "true"
