@@ -42,8 +42,8 @@ echo "📦 Installing Grafana..."
 wget -q https://dl.grafana.com/oss/release/grafana-10.2.3.linux-amd64.tar.gz
 tar xzf grafana-10.2.3.linux-amd64.tar.gz
 
-nohup /opt/grafana-10.2.3/bin/grafana-server \
-  --homepath=/opt/grafana-10.2.3 \
+nohup /opt/grafana-v10.2.3/bin/grafana-server \
+  --homepath=/opt/grafana-v10.2.3 \
   > /var/log/grafana.log 2>&1 &
 
 # -------------------------------
