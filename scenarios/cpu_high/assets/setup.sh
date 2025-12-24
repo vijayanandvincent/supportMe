@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Starting Grafana lab setup..."
+echo "🚀 Starting Grafana CPU Incident Lab Setup..."
 
-# -------------------------------
-# System preparation
-# -------------------------------
+# Update OS
 apt update -y
+
+# Install dependencies
 apt install -y wget curl stress software-properties-common
 
 # -------------------------------
@@ -15,11 +15,7 @@ apt install -y wget curl stress software-properties-common
 cd /opt
 wget -q https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
 tar xzf node_exporter-1.7.0.linux-amd64.tar.gz
-
-nohup /opt/node_exporter-1.7.0.linux-amd64/node_exporter \
-  > /var/log/node_exporter.log 2>&1 &
-
-echo "✅ Node Exporter started"
+nohup ./node_exporter-1.7.0.linux-amd64/node_exporter > /dev/null 2>&1 &
 
 # -------------------------------
 # Install Prometheus
@@ -27,48 +23,23 @@ echo "✅ Node Exporter started"
 wget -q https://github.com/prometheus/prometheus/releases/download/v2.52.0/prometheus-2.52.0.linux-amd64.tar.gz
 tar xzf prometheus-2.52.0.linux-amd64.tar.gz
 
-cp /root/assets/prometheus.yml /opt/prometheus-2.52.0.linux-amd64/prometheus.yml
-cp /root/assets/alert.rules.yml /opt/prometheus-2.52.0.linux-amd64/alert.rules.yml
+cp /root/assets/prometheus.yml prometheus-2.52.0.linux-amd64/
+cp /root/assets/alert.rules.yml prometheus-2.52.0.linux-amd64/
 
-nohup /opt/prometheus-2.52.0.linux-amd64/prometheus \
-  --config.file=/opt/prometheus-2.52.0.linux-amd64/prometheus.yml \
-  > /var/log/prometheus.log 2>&1 &
-
-echo "✅ Prometheus started"
+nohup ./prometheus-2.52.0.linux-amd64/prometheus \
+  --config.file=prometheus-2.52.0.linux-amd64/prometheus.yml > /dev/null 2>&1 &
 
 # -------------------------------
-# Install Grafana (CORRECT WAY)
+# Install Grafana
 # -------------------------------
-mkdir -p /etc/apt/keyrings
-wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor \
-  > /etc/apt/keyrings/grafana.gpg
-
-echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" \
-  > /etc/apt/sources.list.d/grafana.list
-
-apt update -y
 apt install -y grafana
-
-nohup /usr/sbin/grafana-server \
-  --homepath=/usr/share/grafana \
-  --config=/etc/grafana/grafana.ini \
-  > /var/log/grafana.log 2>&1 &
-
-echo "✅ Grafana started"
+systemctl start grafana-server
 
 # -------------------------------
-# Simulate CPU Incident
+# Simulate CPU Issue
 # -------------------------------
-nohup stress --cpu 2 \
-  > /var/log/stress.log 2>&1 &
+stress --cpu 2 &
 
-echo "🔥 CPU stress started"
-
-# -------------------------------
-# Marker file
-# -------------------------------
-touch /tmp/grafana_lab_ready
-
-echo "🎉 Grafana lab READY"
-echo "👉 Grafana URL: http://localhost:3000"
-echo "👉 Login: admin / admin"
+echo "✅ Grafana Lab Ready"
+echo "🌐 Grafana URL: http://localhost:3000"
+echo "👤 Login: admin / admin"
