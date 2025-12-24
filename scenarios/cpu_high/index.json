@@ -1,10 +1,10 @@
 {
-  "title": "Linux CPU High Usage Incident",
-  "description": "Troubleshoot high CPU usage as a Support Engineer",
+  "title": "CPU High Incident with Grafana",
+  "description": "Troubleshoot CPU spike using Grafana and Linux tools",
   "difficulty": "Beginner",
   "time": "30 minutes",
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "ubuntu:22.04"
   },
   "environment": {
     "SHOW_FILE_TREE": "true"
@@ -12,24 +12,7 @@
   "details": {
     "intro": {
       "text": "steps/intro.md",
-      "courseData": "assets/setup.sh"
-    },
-    "steps": [
-      {
-        "title": "Detect High CPU Usage",
-        "text": "steps/step1.sh"
-      },
-      {
-        "title": "Identify Problem Process",
-        "text": "steps/step2.sh"
-      },
-      {
-        "title": "Fix and Verify",
-        "text": "steps/step3.sh"
-      }
-    ],
-    "finish": {
-      "text": "steps/finish.md"
+      "courseData": "assets/setup1.sh"
     }
   }
 }
