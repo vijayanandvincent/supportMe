@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+
 
 echo "SETUP RAN" > /tmp/setup-proof.txt
 apt update -y
