@@ -3,6 +3,12 @@
   "description": "Investigate and resolve high CPU usage using Grafana and Linux commands",
   "difficulty": "beginner",
   "time": "30 minutes",
+  "backend": {
+    "imageid": "ubuntu"
+  },
+  "environment": {
+    "setup": "assets/setup.sh"
+  },
   "details": {
     "intro": {
       "text": "steps/intro.md"
@@ -24,11 +30,5 @@
     "finish": {
       "text": "steps/finish.md"
     }
-  },
-  "backend": {
-    "imageid": "ubuntu"
-  },
-  "environment": {
-    "setup": "assets/setup.sh"
   }
 }
