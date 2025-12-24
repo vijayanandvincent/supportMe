@@ -12,7 +12,7 @@
   "details": {
     "intro": {
       "text": "steps/intro.md",
-      "courseData": "assets/setup1.sh"
+      "courseData": "assets/setup.sh"
     },
     "steps": [
       {
