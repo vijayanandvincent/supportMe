@@ -1,29 +1,30 @@
 {
-  "title": "CPU High Incident with Grafana",
-  "description": "Investigate and resolve high CPU usage using Grafana and Linux commands",
-  "difficulty": "beginner",
+  "title": "Linux CPU High Usage Incident",
+  "description": "Troubleshoot high CPU usage as a Support Engineer",
+  "difficulty": "Beginner",
   "time": "30 minutes",
   "backend": {
     "imageid": "ubuntu"
   },
   "environment": {
-    "setup": "assets/setup.sh"
+    "SHOW_FILE_TREE": "true"
   },
   "details": {
     "intro": {
-      "text": "steps/intro.md"
+      "text": "steps/intro.md",
+      "courseData": "assets/setup.sh"
     },
     "steps": [
       {
-        "title": "Review the Incident Ticket",
+        "title": "Detect High CPU Usage",
         "text": "steps/step1.sh"
       },
       {
-        "title": "Investigate CPU Usage",
+        "title": "Identify Problem Process",
         "text": "steps/step2.sh"
       },
       {
-        "title": "Resolve the Incident",
+        "title": "Fix and Verify",
         "text": "steps/step3.sh"
       }
     ],
