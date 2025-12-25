@@ -50,7 +50,7 @@ nohup /opt/grafana-v10.2.3/bin/grafana-server \
 # Simulate CPU Issue
 # -------------------------------
 echo "🔥 Simulating CPU stress..."
-stress --cpu 1 &
+stress --cpu 2 --timeout 1200 &
 
 # -------------------------------
 # Done
