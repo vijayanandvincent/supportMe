@@ -47,7 +47,7 @@ wget -q https://dl.grafana.com/oss/release/grafana-10.2.3.linux-amd64.tar.gz
 tar xzf grafana-10.2.3.linux-amd64.tar.gz
 
 # IMPORTANT: actual extracted directory name
-GRAFANA_DIR="/opt/grafana-10.2.3"
+GRAFANA_DIR="/opt/grafana-v10.2.3"
 
 nohup $GRAFANA_DIR/bin/grafana-server \
   --homepath=$GRAFANA_DIR \
