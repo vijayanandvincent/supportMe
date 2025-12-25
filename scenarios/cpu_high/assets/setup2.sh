@@ -59,7 +59,7 @@ sleep 5
 # Simulate CPU Issue (1-core safe)
 # -------------------------------
 echo "🔥 Simulating CPU stress (1 core)..."
-stress --cpu 1 --timeout 300 &
+stress --cpu 2 --timeout 300 &
 
 # -------------------------------
 # Done
